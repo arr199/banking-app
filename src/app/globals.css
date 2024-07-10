@@ -1,6 +1,6 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
   @layer base {
     :root {
@@ -66,4 +66,18 @@
     body {
       @apply bg-background text-foreground;
     }
+  }
+
+    /* Sidebar */
+    /* .sidebar {
+      @apply sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between border-r border-gray-200 bg-white pt-8 text-white max-md:hidden sm:p-4 xl:p-6 2xl:w-[355px];
+    } */
+  
+
+  .sidebar {
+    @apply max-sm:hidden sticky p-4 border-r border-gray-200   flex flex-col;
+  }
+
+  .mobile-sidebar {
+    @apply sm:hidden sticky p-4 border-r border-gray-200  flex flex-col;
   }
