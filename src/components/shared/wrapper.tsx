@@ -11,7 +11,7 @@ export default function Wrapper({
   ...rest
 }: WrapperProps): JSX.Element {
   return (
-    <div {...rest} className={cn("p-8 max-w-[1400px]", className)}>
+    <div {...rest} className={cn("p-8 max-w-[1400px] w-full", className)}>
       {children}
     </div>
   );
