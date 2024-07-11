@@ -1,5 +1,5 @@
-import { LeftNavbar } from "@/components/home/leftNavbar";
-import { MobileNavbar } from "@/components/home/mobileNavbar";
+import { LeftNavbar } from "@/components/shared/leftNavbar";
+import { MobileNavbar } from "@/components/shared/mobileNavbar";
 
 export default function RootLayout({
   children,
@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   const user: User = { id: 1, name: "John Doe" };
   return (
-    <main className="flex">
+    <main className="flex max-sm:flex-col ">
       <MobileNavbar user={user}></MobileNavbar>
       <LeftNavbar user={user}></LeftNavbar>
       {children}
