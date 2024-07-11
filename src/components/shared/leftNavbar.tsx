@@ -1,9 +1,12 @@
 "use client";
+// COMPONENTS
 import Image from "next/image";
 import { Input } from "../ui/input";
 import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { navigationLinks } from "@/lib/constants";
 
 interface SideBarProps {
   user: User;
@@ -12,9 +15,8 @@ interface SideBarProps {
 export function LeftNavbar({ user }: SideBarProps): JSX.Element {
   const currentPath = usePathname();
 
-  console.log(currentPath);
   return (
-    <nav className="sidebar">
+    <nav className="sidebar ">
       <div className="flex items-center gap-2 max-md:justify-center ">
         <div className=" max-md:size-[50px] w-10 h-10 relative  ">
           <Image src={"/icons/logo.svg"} alt="logo" fill></Image>
@@ -31,8 +33,8 @@ export function LeftNavbar({ user }: SideBarProps): JSX.Element {
         />
         <Input className="w-full h-full pl-8 " placeholder="Search" />
       </div>
-      <section className="flex flex-col  mt-4 max-md:mt-16">
-        {leftNavbarLinks.map((link) => {
+      <section className="flex flex-col  mt-4 max-md:mt-16 w-full">
+        {navigationLinks.map((link) => {
           const isActive =
             currentPath === link.route ||
             currentPath.startsWith(`${link.route}/`);
@@ -42,7 +44,7 @@ export function LeftNavbar({ user }: SideBarProps): JSX.Element {
               href={link.route}
               key={link.route}
               className={cn(
-                "flex items-center gap-4 capitalize p-4 rounded-md",
+                "flex items-center gap-4 capitalize p-4 rounded-md w-full",
                 {
                   "bg-blue-500 text-white": isActive,
                 }
@@ -65,32 +67,3 @@ export function LeftNavbar({ user }: SideBarProps): JSX.Element {
     </nav>
   );
 }
-
-export const leftNavbarLinks = [
-  {
-    label: "home",
-    route: "/",
-    icon: "/icons/home.svg",
-  },
-
-  {
-    label: "my banks",
-    route: "/banks",
-    icon: "/icons/dollar-circle.svg",
-  },
-  {
-    label: "transaction history",
-    route: "/transactions",
-    icon: "/icons/transaction.svg",
-  },
-  {
-    label: "payments transfer",
-    route: "/payments",
-    icon: "/icons/payment-transfer.svg",
-  },
-  {
-    label: "connect banks",
-    route: "/connect-banks",
-    icon: "/icons/connect-bank.svg",
-  },
-];
