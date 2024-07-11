@@ -1,16 +1,16 @@
 import { LeftNavbar } from "@/components/shared/leftNavbar";
 import { MobileNavbar } from "@/components/shared/mobileNavbar";
+import { mockUser } from "@/lib/data";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user: User = { id: 1, name: "John Doe" };
   return (
     <main className="flex max-sm:flex-col ">
-      <MobileNavbar user={user}></MobileNavbar>
-      <LeftNavbar user={user}></LeftNavbar>
+      <MobileNavbar user={mockUser}></MobileNavbar>
+      <LeftNavbar user={mockUser}></LeftNavbar>
       {children}
     </main>
   );

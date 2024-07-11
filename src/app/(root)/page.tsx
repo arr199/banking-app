@@ -2,11 +2,11 @@ import { AmountChart } from "@/components/home/amountChart";
 import { BalanceInfo } from "@/components/home/balanceInfo";
 import RightSideBar from "@/components/home/rightSideBar";
 import Wrapper from "@/components/shared/wrapper";
-import { accountsData } from "@/lib/data";
+import { accountsData, mockUser } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="flex justify-between w-full ">
+    <div className="flex justify-between w-full min-h-screen">
       <Wrapper>
         <header className="w-full">
           <h1 className="text-2xl font-bold">
@@ -21,7 +21,7 @@ export default function Home() {
           <BalanceInfo totalAccounts={1} totalAmount={1235.12} />
         </section>
       </Wrapper>
-      <RightSideBar />
+      <RightSideBar user={mockUser} />
     </div>
   );
 }
