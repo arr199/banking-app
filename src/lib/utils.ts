@@ -10,4 +10,6 @@ export function formatPrice(n: number) {
     style: "currency",
     currency: "USD",
   }).format(n);
+
+  return number;
 }
