@@ -58,7 +58,7 @@ function Cards({ user, cards }: CardsProps) {
   return (
     <div className="flex flex-col w-full h-full mt-10 text-white  ">
       <div className="flex w-full h-[160px]  ">
-        {/* LEFT */}
+        {/* LEFT SIDE */}
         <div className="bg-blue-400 w-[80%] h-full rounded-l-lg p-2 flex flex-col justify-between ">
           <div className="flex flex-col">
             <span className="text-xs font-semibold mt-2">
@@ -78,7 +78,7 @@ function Cards({ user, cards }: CardsProps) {
             <span className="">**** **** **** 1234</span>
           </div>
         </div>
-        {/* RIGHT */}
+        {/* RIGHT SIDE */}
         <div className=" bg-blue-500 w-[20%] h-full rounded-r-lg relative p-4 flex flex-col justify-between items-center">
           <div className="relative size-[22px]">
             <Image
