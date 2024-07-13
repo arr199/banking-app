@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Serif } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const IBM = IBM_Plex_Serif({
+
+const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-IBM",
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${IBM}`}>{children}</body>
+      <body className={`${inter.className}  ${roboto}`}>{children}</body>
     </html>
   );
 }
