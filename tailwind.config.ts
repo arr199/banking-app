@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ["Inter", "--font-inter"],
+        roboto: ["Roboto", "--font-roboto"],
+      },
       boxShadow: {
         container: "0 0 4px 0 rgba(0, 0, 0 , 0.2)",
       },
