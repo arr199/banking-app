@@ -13,3 +13,8 @@ export function formatPrice(n: number) {
 
   return number;
 }
+
+export function hideNumber(number: number) {
+  const str = number.toString();
+  return `**** **** **** ${str.slice(-4)}`;
+}
