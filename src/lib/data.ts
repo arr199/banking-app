@@ -23,7 +23,7 @@ export const mockUser: User = {
   id: 1,
 };
 
-export const mockCards = [
+export const mockCards: Card[] = [
   {
     number: 1234567890,
     balance: 125.32,
@@ -41,5 +41,3 @@ export const mockCards = [
     bank: "Chase",
   },
 ];
-
-
