@@ -1,5 +1,5 @@
 "use client";
-import { ArcElement, Chart, ChartData, Legend, Tooltip } from "chart.js";
+import { ArcElement, Chart, type ChartData, Legend, Tooltip } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
 Chart.register(ArcElement, Tooltip, Legend);
@@ -26,15 +26,16 @@ export function AmountChart({ data = [] }: AmountChartProps): JSX.Element {
 
   return (
     <div className="h-full self-center">
-      <Doughnut width="100px" height="100px"
+      <Doughnut
+        width="100px"
+        height="100px"
         title="Banks"
         options={{
-            maintainAspectRatio : false,
-            plugins: {
+          maintainAspectRatio: false,
+          plugins: {
             legend: {
               display: false,
               align: "start",
-             
             },
             title: {
               display: true,

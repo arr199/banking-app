@@ -22,10 +22,10 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
     <html lang="en">
-      <body className={`${inter.className}  ${roboto}`}>{children}</body>
+      <body className={`${inter.className}  ${roboto.className}`}>{children}</body>
     </html>
   );
 }

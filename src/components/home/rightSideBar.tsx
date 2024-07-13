@@ -10,12 +10,7 @@ export default function RightSideBar({ user }: RightSideBarProps): JSX.Element {
   return (
     <div className="max-xl:hidden flex flex-col w-[400px] border-l p-0 m-0 font-inter ">
       <div className="relative h-32 w-full">
-        <Image
-          className="object-cover"
-          src="/icons/gradient-mesh.svg"
-          alt="gradient"
-          fill
-        />
+        <Image className="object-cover" src="/icons/gradient-mesh.svg" alt="gradient" fill />
       </div>
       <section className="relative ">
         {/* INITIALS BADGE */}
@@ -31,9 +26,7 @@ export default function RightSideBar({ user }: RightSideBarProps): JSX.Element {
           <h3 className="font-bold text-xl">
             {user.firstName} {user.lastName}
           </h3>
-          <p className="text-xs text-muted-foreground font-semibold">
-            {user.email}
-          </p>
+          <p className="text-xs text-muted-foreground font-semibold">{user.email}</p>
           <div className="mt-10 w-full ">
             <div className="flex justify-between items-end ">
               <span className="font-bold">My Banks</span>
@@ -54,15 +47,12 @@ interface CardsProps {
   cards: Card[];
 }
 
-function Cards({ user, cards }: CardsProps) {
+function Cards({ user, cards }: CardsProps): JSX.Element {
   return (
     <>
       {cards.map((card, index) => {
         return (
-          <div
-            key={index}
-            className="flex flex-col w-full h-full mt-10 text-white  "
-          >
+          <div key={index} className="flex flex-col w-full h-full mt-10 text-white  ">
             <div className="flex w-full h-[160px]  ">
               {/* LEFT SIDE */}
               <div className="bg-blue-400 w-[80%] h-full rounded-l-lg p-2 flex flex-col justify-between ">
@@ -70,9 +60,7 @@ function Cards({ user, cards }: CardsProps) {
                   <span className="text-xs font-semibold mt-2">
                     {user.firstName} {user.lastName}
                   </span>
-                  <span className="text-xs font-semibold mt-1">
-                    {formatPrice(cards[0].balance)}
-                  </span>
+                  <span className="text-xs font-semibold mt-1">{formatPrice(cards[0].balance)}</span>
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className=" flex items-end justify-between text-[0.65rem]">
@@ -87,20 +75,10 @@ function Cards({ user, cards }: CardsProps) {
               {/* RIGHT SIDE */}
               <div className=" bg-blue-500 w-[20%] h-full rounded-r-lg relative p-4 flex flex-col justify-between items-center">
                 <div className="relative size-[22px]">
-                  <Image
-                    className="opacity-70 "
-                    src={"/icons/Paypass.svg"}
-                    alt="Paypass"
-                    fill
-                  ></Image>
+                  <Image className="opacity-70 " src={"/icons/Paypass.svg"} alt="Paypass" fill></Image>
                 </div>
                 <div className="relative size-[35px]">
-                  <Image
-                    className="opacity-90"
-                    src={"/icons/mastercard.svg"}
-                    fill
-                    alt="mastercard"
-                  ></Image>
+                  <Image className="opacity-90" src={"/icons/mastercard.svg"} fill alt="mastercard"></Image>
                 </div>
                 {/* <div className="card-right-area"></div> */}
               </div>

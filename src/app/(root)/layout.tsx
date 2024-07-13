@@ -6,7 +6,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
     <main className="flex max-sm:flex-col ">
       <MobileNavbar user={mockUser}></MobileNavbar>

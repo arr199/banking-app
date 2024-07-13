@@ -5,12 +5,11 @@ import { Form } from "../ui/form";
 
 // OTHERS
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signInSchema, SignInSchemaType } from "@/lib/zodSchemas/signInSchema";
+import { signInSchema, type SignInSchemaType } from "@/lib/zodSchemas/signInSchema";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Button } from "../ui/button";
 
-export function SignInForm() {
+export function SignInForm(): JSX.Element {
   const form = useForm<SignInSchemaType>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -19,7 +18,7 @@ export function SignInForm() {
     },
   });
 
-  function onSubmit() {
+  function onSubmit(): any {
     console.log("Submiting");
   }
 

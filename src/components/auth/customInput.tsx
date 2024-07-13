@@ -3,8 +3,8 @@
 import { Input } from "../ui/input";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 // OTHERS
-import { SignInSchemaType } from "@/lib/zodSchemas/signInSchema";
-import { Control, FieldPath } from "react-hook-form";
+import { type SignInSchemaType } from "@/lib/zodSchemas/signInSchema";
+import type { Control, FieldPath } from "react-hook-form";
 
 interface CustomInputProps {
   name: FieldPath<SignInSchemaType>;
@@ -14,7 +14,7 @@ interface CustomInputProps {
   type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
 }
 
-export function CustomInput({ name, label, control, placeHolder, type }: CustomInputProps) {
+export function CustomInput({ name, label, control, placeHolder, type }: CustomInputProps): JSX.Element {
   return (
     <FormField
       control={control}
