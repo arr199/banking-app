@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { navigationLinks } from "@/lib/constants";
+import { type User } from "../../../types";
 
 interface SideBarProps {
   user: User;

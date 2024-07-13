@@ -1,9 +1,6 @@
-interface User {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-}
+import { type Models } from "node-appwrite";
+
+type User = Models.User<Models.Preferences>;
 
 interface Account {
   id: number;

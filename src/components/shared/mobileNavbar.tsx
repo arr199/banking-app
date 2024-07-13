@@ -6,6 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { navigationLinks } from "@/lib/constants";
+import { type User } from "../../../types";
 
 interface SideBarProps {
   user: User;
@@ -41,15 +42,20 @@ function Menu(): JSX.Element {
           </div>
           <section className="flex flex-col mt-8">
             {navigationLinks.map((link) => {
-              const isActive = currentPath === link.route || currentPath.startsWith(`${link.route}/`);
+              const isActive =
+                currentPath === link.route ||
+                currentPath.startsWith(`${link.route}/`);
 
               return (
                 <Link
                   href={link.route}
                   key={link.route}
-                  className={cn("flex items-center gap-4 capitalize p-4 rounded-md", {
-                    "bg-blue-500 text-white": isActive,
-                  })}
+                  className={cn(
+                    "flex items-center gap-4 capitalize p-4 rounded-md",
+                    {
+                      "bg-blue-500 text-white": isActive,
+                    }
+                  )}
                 >
                   <Image
                     className={cn("", {

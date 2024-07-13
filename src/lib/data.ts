@@ -16,14 +16,9 @@ export const accountsData = [
   },
 ];
 
-export const mockUser: User = {
-  firstName: "Abiel",
-  lastName: "Tewelde",
-  email: "abielTewelde@gmail.com",
-  id: 1,
-};
+export type AccountData = (typeof accountsData)[0];
 
-export const mockCards: Card[] = [
+export const mockCards = [
   {
     number: 1234567890,
     balance: 125.32,
@@ -41,3 +36,5 @@ export const mockCards: Card[] = [
     bank: "Chase",
   },
 ];
+
+export type Card = (typeof mockCards)[0];
