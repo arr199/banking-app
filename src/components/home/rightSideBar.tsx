@@ -1,5 +1,5 @@
 import { mockCards } from "@/lib/data";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, hideNumber } from "@/lib/utils";
 import Image from "next/image";
 
 interface RightSideBarProps {
@@ -8,7 +8,7 @@ interface RightSideBarProps {
 
 export default function RightSideBar({ user }: RightSideBarProps): JSX.Element {
   return (
-    <div className="max-xl:hidden flex flex-col w-[400px] border-l p-0 m-0">
+    <div className="max-xl:hidden flex flex-col w-[400px] border-l p-0 m-0 font-inter ">
       <div className="relative h-32 w-full">
         <Image
           className="object-cover"
@@ -56,49 +56,58 @@ interface CardsProps {
 
 function Cards({ user, cards }: CardsProps) {
   return (
-    <div className="flex flex-col w-full h-full mt-10 text-white  ">
-      <div className="flex w-full h-[160px]  ">
-        {/* LEFT SIDE */}
-        <div className="bg-blue-400 w-[80%] h-full rounded-l-lg p-2 flex flex-col justify-between ">
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold mt-2">
-              {user.firstName} {user.lastName}
-            </span>
-            <span className="text-xs font-semibold mt-1">
-              {formatPrice(cards[0].balance)}
-            </span>
-          </div>
-          <div className="flex flex-col gap-2">
-            <div className=" flex items-end justify-between text-[0.65rem]">
-              <span className="font-semibold self-end">
-                {user.firstName} {user.lastName}
-              </span>
-              <span>** / **</span>
+    <>
+      {cards.map((card, index) => {
+        return (
+          <div
+            key={index}
+            className="flex flex-col w-full h-full mt-10 text-white  "
+          >
+            <div className="flex w-full h-[160px]  ">
+              {/* LEFT SIDE */}
+              <div className="bg-blue-400 w-[80%] h-full rounded-l-lg p-2 flex flex-col justify-between ">
+                <div className="flex flex-col">
+                  <span className="text-xs font-semibold mt-2">
+                    {user.firstName} {user.lastName}
+                  </span>
+                  <span className="text-xs font-semibold mt-1">
+                    {formatPrice(cards[0].balance)}
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className=" flex items-end justify-between text-[0.65rem]">
+                    <span className="font-semibold self-end">
+                      {user.firstName} {user.lastName}
+                    </span>
+                    <span>** / **</span>
+                  </div>
+                  <span className="">{hideNumber(card.number)}</span>
+                </div>
+              </div>
+              {/* RIGHT SIDE */}
+              <div className=" bg-blue-500 w-[20%] h-full rounded-r-lg relative p-4 flex flex-col justify-between items-center">
+                <div className="relative size-[22px]">
+                  <Image
+                    className="opacity-70 "
+                    src={"/icons/Paypass.svg"}
+                    alt="Paypass"
+                    fill
+                  ></Image>
+                </div>
+                <div className="relative size-[35px]">
+                  <Image
+                    className="opacity-90"
+                    src={"/icons/mastercard.svg"}
+                    fill
+                    alt="mastercard"
+                  ></Image>
+                </div>
+                {/* <div className="card-right-area"></div> */}
+              </div>
             </div>
-            <span className="">**** **** **** 1234</span>
           </div>
-        </div>
-        {/* RIGHT SIDE */}
-        <div className=" bg-blue-500 w-[20%] h-full rounded-r-lg relative p-4 flex flex-col justify-between items-center">
-          <div className="relative size-[22px]">
-            <Image
-              className="opacity-70 "
-              src={"/icons/Paypass.svg"}
-              alt="Paypass"
-              fill
-            ></Image>
-          </div>
-          <div className="relative size-[35px]">
-            <Image
-              className="opacity-90"
-              src={"/icons/mastercard.svg"}
-              fill
-              alt="mastercard"
-            ></Image>
-          </div>
-          {/* <div className="card-right-area"></div> */}
-        </div>
-      </div>
-    </div>
+        );
+      })}
+    </>
   );
 }
