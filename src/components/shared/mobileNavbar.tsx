@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { navigationLinks } from "@/lib/constants";
 import { type User } from "../../../types";
+import { Footer } from "./footer";
 
 interface SideBarProps {
   user: User;
@@ -33,7 +34,7 @@ function Menu(): JSX.Element {
         </div>
       </SheetTrigger>
       <SheetContent side={"left"} className="px-4 mt-4 font-inter">
-        <nav className="">
+        <nav className="flex flex-col h-full p-4">
           <div className="flex items-center gap-2  ">
             <div className=" max-md:size-[30px] w-10 h-10 relative  ">
               <Image src={"/icons/logo.svg"} alt="logo" fill></Image>
@@ -71,6 +72,13 @@ function Menu(): JSX.Element {
               );
             })}
           </section>
+          <div className="mt-auto w-full">
+            <Footer
+              type="mobile"
+              name="abiel.rodriguez"
+              email={"abiela@.com"}
+            ></Footer>
+          </div>
         </nav>
       </SheetContent>
     </Sheet>

@@ -17,6 +17,7 @@ import { signUp } from "@/lib/actions/auth/signUp";
 import { useState } from "react";
 import { Loader } from "lucide-react";
 import { toast } from "sonner";
+import { ScrollArea } from "../ui/scroll-area";
 
 export function SignUpForm(): JSX.Element {
   const [loading, setLoading] = useState(false);
@@ -52,7 +53,7 @@ export function SignUpForm(): JSX.Element {
   }
 
   return (
-    <div className="mt-2 lg:w-[50%]  mx-auto  p-4 max-lg:pb-10 rounded-md lg:overflow-y-auto ">
+    <ScrollArea className=" lg:w-[50%]  mx-auto  p-4 max-lg:pb-10 rounded-md lg:overflow-y-auto ">
       <div className="max-w-[550px] w-full mx-auto">
         <div className="flex items-center gap-2  ">
           <div className=" max-md:size-[40px] w-10 h-10 relative  ">
@@ -162,6 +163,6 @@ export function SignUpForm(): JSX.Element {
           </form>
         </Form>
       </div>
-    </div>
+    </ScrollArea>
   );
 }
