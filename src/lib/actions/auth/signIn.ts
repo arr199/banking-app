@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 export async function signIn(data: SignInSchemaType): Promise<void> {
   // TODO VALIDATIONS
   try {
-    const { account ,  } = await createAdminClient();
+    const { account } = await createAdminClient();
     const session = await account.createEmailPasswordSession(
       data.email,
       data.password

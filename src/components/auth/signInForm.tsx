@@ -16,6 +16,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { signIn } from "@/lib/actions/auth/signIn";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export function SignInForm(): JSX.Element {
   const [loading, setLoading] = useState(false);
@@ -29,11 +30,16 @@ export function SignInForm(): JSX.Element {
 
   async function onSubmit(data: SignInSchemaType): Promise<void> {
     setLoading(true);
-    await signIn(data)
-      .catch(console.error)
-      .finally(() => {
-        setLoading(false);
+    try {
+      await signIn(data);
+    } catch (err: any) {
+      toast.error(err?.message as string, {
+        position: "top-center",
+        duration: 6000,
       });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (

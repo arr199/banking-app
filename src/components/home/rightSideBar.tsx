@@ -1,4 +1,4 @@
-import { Card, mockCards } from "@/lib/data";
+import { type Card, mockCards } from "@/lib/data";
 import { formatPrice, hideNumber } from "@/lib/utils";
 import Image from "next/image";
 import { type User } from "../../../types";
@@ -75,9 +75,7 @@ function Cards({ user, cards }: CardsProps): JSX.Element {
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className=" flex items-end justify-between text-[0.65rem]">
-                    <span className="font-semibold self-end">
-                      {user.firstName} {user.lastName}
-                    </span>
+                    <span className="font-semibold self-end">{user.name}</span>
                     <span>** / **</span>
                   </div>
                   <span className="">{hideNumber(card.number)}</span>
